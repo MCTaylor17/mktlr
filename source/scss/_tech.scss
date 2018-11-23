@@ -13,7 +13,7 @@
   background-attachment: fixed;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-gap: 5%;
+  grid-gap: 20px;
   padding: 5%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   
@@ -53,10 +53,6 @@
   
   @include media("<1000px") {
     grid-template-columns: 1fr;
-    
-    .text {
-      margin-bottom: 20px;
-    }
   }
   
   .tools {
@@ -80,6 +76,18 @@
       object-position: center center;
       padding: 10px;
       border-radius: 0 10px 10px 10px;
+      
+      @include media("<900px") {
+        width: 75px;
+        height: 75px;
+      }
+      
+      @include media("<600px") {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        margin: 3px;
+      }
     }
   }
   
