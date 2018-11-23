@@ -61,19 +61,21 @@
   
   .tools {
     grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: .6;
     
     @include media("<1000px") {
       grid-column: 1;
       grid-row: 1;
     }
-    opacity: .6;
+    
     img {
+      margin: 5px;
       background: white;
-      width: 15%;
-      max-width: 100px;
-      max-height: 100px;
-      min-width: 75px;
-      min-height: 75px;
+      width: 100px;
+      height: 100px;
       object-fit: scale-down;
       object-position: center center;
       padding: 10px;
