@@ -1,0 +1,50 @@
+.footer-gap {
+  pointer-events: none;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  background: url(../../img/forest-night.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  z-index: 1;
+  min-height: 50vh;
+  color: rgba(255, 255, 255, 0.5);
+  //text-shadow: 1px 1px 3px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-size: 3vmin;
+  font-family: $heading-font;
+  
+  
+  
+  i {
+    font-size: 12vmin;
+    display: block;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    margin-top: 10px;
+    
+    &.hidden {
+      display: none;
+    }
+  }
+  
+  .flip-container {
+    perspective: 1000px;
+
+    .flipper {
+      transition: transform 1s ease;
+    }
+    
+    &.flip .flipper {
+      transform: rotateY(90deg);
+    }
+  }
+  
+}

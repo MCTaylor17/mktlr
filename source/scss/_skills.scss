@@ -1,0 +1,69 @@
+.skill {
+  position: relative;
+  z-index: 99;
+  height: 75vh;
+  background: white;
+  &:after {
+  }
+  h1 {
+    color: blue;
+  }
+}
+
+#ux {
+  @include mask-top($ux-color);
+  @include mask-bottom($ux-color);
+  background: $ux-color;
+}
+
+#mktg {
+  @include mask-top($mktg-color);
+  @include mask-bottom($mktg-color);
+  background: $mktg-color;
+}
+
+#dev {
+  @include mask-top($dev-color);
+  @include mask-bottom($dev-color);
+  background: $dev-color;
+}
+
+#biz {
+  @include mask-top($biz-color);
+  //@include mask-bottom($biz-color);
+  background: $biz-color;
+}
+
+.gap {
+  position: relative;
+  min-width: 100%;
+  height: 50vmin;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  h1 {
+    font-size: 35vmin;
+    color: rgba(255, 255, 255, 0.2);
+    //text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.35);
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.71);
+    line-height: 1;
+  }
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-family: $heading-font;
+    
+  &.ux {
+    background-image: url(../img/ux.jpg);
+  }
+  &.mktg {
+    background-image: url(../img/mktg.jpg);
+  }
+  &.dev {
+    background-image: url(../img/dev.jpg);
+  }
+  &.biz {
+    background-image: url(../img/biz.jpg);
+  }
+}
