@@ -11,6 +11,7 @@
   overflow: hidden;
   z-index: 8;
   
+  
   h1 {
     color: red;
     margin: 0;
@@ -31,6 +32,10 @@
     font-family: $heading-font;
     text-shadow: 1px 1px 5px black;
     line-height: 1.5;
+    
+    @include media("<1400px") {
+      font-size: 8vmin;
+    }
   }
   
   .masked {
@@ -42,17 +47,18 @@
     mask-position: 0px 0px;
     height: 100%;
     width: 100%;
-    
+  }
+
+  @include media("<900px") {
+    background-position: 30% 0px;
+    .masked {
+      mask-position: 30% 0px;
+    }
+    h2 {
+      font-size: calc(2vmin + 2vmax + 2vw);
+    }
   }
 }
-
-@media screen and (max-width: 600px) {
-  .banner h2 {
-    font-size: 10vmin;
-  }
-}
-
-
 
 
 .banner .mktlr {
