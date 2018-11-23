@@ -5,13 +5,14 @@
   width: 100%;
   padding: 10vmin;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-  
-  
-  h1, p {
+
+
+  h1,
+  p {
     color: white;
     text-align: center;
     margin-bottom: 50px;
-    
+
   }
   h1 {
     font-size: 5vmax;
@@ -19,36 +20,56 @@
   p {
     font-size: 3vmax;
   }
-  
-  
+
+
   form {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     max-width: 700px;
     margin: 0 auto;
     grid-gap: 20px;
   }
-  
-  .full {
-    grid-column: 1 / span 2;
-  }
-  .left {
+
+  .name,
+  .company,
+  .recaptcha {
     grid-column: 1 / span 1;
   }
-  .right {
+  .email,
+  .phone,
+  .submit {
     grid-column: 2 / span 1;
+  }
+  .message {
+    grid-column: 1 / span 2;
+  }
+
+  .recaptcha,
+  .submit {
+    justify-self: center;
   }
 
   @include media("<800px") {
-    .left, .right {
+    .name,
+    .email,
+    .phone,
+    .company,
+    .recaptcha,
+    .submit {
       grid-column: 1 / span 2;
+    }
+
+    .name,
+    .email,
+    .phone,
+    .company {
       input {
         max-width: 500px;
       }
     }
   }
-  
-  input  {
+
+  input {
     &[type="text"],
     &[type="email"],
     &[type="tel"] {
@@ -63,13 +84,14 @@
       color: white;
       border-bottom: 1px solid white;
       width: 100%;
-      
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         background: rgba(255, 255, 255, 0.1);
       }
     }
   }
-  
+
   textarea {
     resize: none;
     background: transparent;
@@ -86,7 +108,8 @@
     height: 300px;
     display: block;
     margin-bottom: 40px;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: rgba(255, 255, 255, 0.1);
     }
   }
@@ -97,12 +120,12 @@
     width: 100%;
     display: inline-block;
   }
-  
+
   .hidden {
     visibility: hidden;
     position: absolute;
   }
-      
+
   button[type="submit"] {
     box-sizing: border-box;
     margin: 0 auto;
@@ -118,22 +141,24 @@
     transition: box-shadow .5s ease, transform .5s ease, background .3s ease, color .3s ease;
     outline: none;
     clear: both;
-    
+
     &:disabled {
       background: #1a2529;
     }
-    
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       background: #2894be;
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
       transform: scale(1.2);
       color: white;
     }
-    
+
   }
-  
+
   ::placeholder {
     color: white;
-    opacity: .3; /* Firefox */
-}
+    opacity: .3;
+    /* Firefox */
+  }
 }

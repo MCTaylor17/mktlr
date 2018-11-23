@@ -168,29 +168,29 @@
       <p>If you feel I can help,<br/> don't hesitate to reach out.</p>
       <form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/contact-success.html">
 
-        <div class="left">
+        <div class="name">
           <label for="name" title="required">Name *</label><input id="name" type="text" name="name" required placeholder="required" />
         </div>
-        <div class="right">
+        <div class="email">
           <label for="email" title="required">Email *</label>
           <input id="email" type="email" name="email" required placeholder="required" />
         </div>
-        <div class="left">
+        <div class="company">
           <label for="company">Company</label>
           <input id="company" type="text" name="company" />
         </div>
-        <div class="right">
+        <div class="phone">
           <label for="phone">Phone</label>
           <input id="phone" type="tel" name="phone" />
         </div>
         <div class="hidden">
           <label for="bot-field">Don’t fill this out if you're human: <input name="bot-field" /></label>
         </div>
-        <div class="full">
+        <div class="message">
           <label for="message" title="required">Message *</label><textarea name="message" id="message" required minlength="20" placeholder="required"></textarea>
         </div>
-        <div class="left" data-netlify-recaptcha></div>
-        <div class="right">
+        <div class="recaptcha" data-netlify-recaptcha></div>
+        <div class="submit">
           <button type="submit">Send <i class="fas fa-envelope"></i></button>
         </div>
       </form>
