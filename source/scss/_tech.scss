@@ -4,7 +4,6 @@
   z-index: 8;
   perspective: 1000px;
   overflow: hidden;
-  //min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,9 +17,6 @@
   padding: 5%;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   
-  @include media("<1000px") {
-    grid-template-columns: 1fr;
-  }
   
   .text {
     grid-column: 1;
@@ -52,6 +48,14 @@
       &:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+  
+  @include media("<1000px") {
+    grid-template-columns: 1fr;
+    
+    .text {
+      margin-bottom: 20px;
     }
   }
   
