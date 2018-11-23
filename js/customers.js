@@ -42,22 +42,19 @@
     }
   }
   
-  var counter = 0;
   $customers.on("mousemove", function(e) {
     var percentX, percentY;
     
-    if(counter++ % 10 === 0) {
-      percentX = e.pageX / userWidth * 100;
-      percentY = (e.pageY - userOffset) / userHeight * 100;
-      bgX = percentX;
-      fgX = 100 - percentX;
-      bgY = 100 - percentY;
+    percentX = e.pageX / userWidth * 100;
+    percentY = (e.pageY - userOffset) / userHeight * 100;
+    bgX = percentX;
+    fgX = 100 - percentX;
+    bgY = 100 - percentY;
 
 
-      if(!lerping) {
-        lerping = true;
-        lerp();
-      }
+    if(!lerping) {
+      lerping = true;
+      lerp();
     }
   });
   
@@ -67,19 +64,38 @@
     userWidth = $customers.width();
   });
   
+  var left = true;
   $(window).scroll(function() {
     if(!lerping) {
-      if(fgX <= 33) {
-        fgX = 66;
-        bgX = 33;
+      if(left) {
+        fgX+= 0.05;
+        bgX-= 0.05;
+        
+        if(fgX >= 80) {
+          left = false; 
+        }
       } else {
-        fgX = 33;
-        bgX = 66;
+        fgX-= 0.05;
+        bgX+= 0.05;
+        
+        if (fgX <= 20) {
+          left = true;
+        }
       }
       
-      lerping = true;
-      lerp();
+      fgXNow = fgX;
+      bgXNow = bgX;
+
+      requestAnimationFrame(function() {
+        $foreground.css({
+          "background-position-x": fgX + "%"
+        });
+
+        $background.css({
+          "background-position-x": bgX + "%"
+        });
+      });
     }
-  })
+  });
   
 }(jQuery));
