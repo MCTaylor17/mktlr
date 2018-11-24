@@ -12,7 +12,7 @@
     
     
     $title.css("top", -1 * scrollTop /15 + 20);
-    $title.css("left", scrollTop /3 + 20 + 50);
+    $title.css("left", scrollTop /3 + 50);
     $banner.css("top", scrollTop / 3.8);
   }
   
