@@ -18,12 +18,6 @@
     var deltaX50 = percentX - 50;
     var degreesX = deltaX50/100 * 10 * -1;
     
-    if(degreesX === 10) {
-      console.log(percentX);
-      console.log(deltaX50);
-    }
-    
-    //console.log(degreesX);
     var percentY = (e.pageY - techOffset) / techHeight * 100;
     var deltaY50 = percentY - 50;
     var degreesY = deltaY50/100 * 15;
@@ -31,5 +25,26 @@
     $tools.css({transform: "rotateY("+ degreesX +"deg) rotateX("+ degreesY +"deg)"})
   });
   
+  var counter = 0;
+  $(window).scroll(function() {
+    if(counter++ % 30 === 0) {
+      var degreesX = getRandomNumber(); 
+      var degreesY = getRandomNumber();
+    
+      $tools.css({transform: "rotateY("+ degreesX +"deg) rotateX("+ degreesY +"deg)"})
+    }
+  });
+  
+  function randomizeSign(number) {
+    if(Math.random() >= .5) {
+      return number;
+    } else {
+      return number * -1;
+    }
+  }
+  
+  function getRandomNumber() {
+    return randomizeSign(Math.floor(Math.random() * 15));
+  }
   
 }(jQuery));
