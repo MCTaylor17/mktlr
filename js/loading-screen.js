@@ -37,8 +37,9 @@
     $(window).on("load",removeLoadingScreen);
 
     function removeLoadingScreen() {
-      $("main").fadeIn();
-      $(".loading-screen").fadeOut(function() {
+      clearInterval(interval);
+      $("main").fadeIn(function() {
+        $(".loading-screen").remove();  
         particles.destroy();
       });
     }
