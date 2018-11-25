@@ -1,0 +1,29 @@
+.loading-screen {
+  position: relative;
+  
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .message {
+    position: relative;
+    z-index: 999999;
+    font-size: calc(8vmin + 1rem);
+    line-height: 100vh;
+    transform: translate(-50%);
+    left: 50%;
+    display: inline-block;
+    font-family: monospace;
+  }
+  
+  %dots {
+    // If font other than monospaced is used
+    width: 0;
+    overflow: visible;
+    display: inline-block;
+  }
+  
+  
+}
