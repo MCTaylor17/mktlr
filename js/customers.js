@@ -58,7 +58,7 @@
     }
   });
   
-  $(window).resize(function() {
+  $(window).on("resize load", function() {
     userOffset = $customers.offset().top;
     userHeight = $customers.height();
     userWidth = $customers.width();
