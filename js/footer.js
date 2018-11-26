@@ -7,7 +7,7 @@
   }
   setPrevMargin();
   $footer.css({position: "fixed", bottom: 0 })
-  $(window).resize(setPrevMargin);
+  $(window).on("resize load", setPrevMargin);
   
   var $flipContainer = $(".flip-container");
   var $icons = $(".flipper i");

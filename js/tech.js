@@ -7,7 +7,7 @@
   var techOffset = $tech.offset().top;
   
   
-  $(window).resize(function() {
+  $(window).on("resize load", function() {
     techWidth = $tech.width();
     techHeight = $tech.outerHeight();
     techOffset = $tech.offset().top;
