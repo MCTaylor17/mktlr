@@ -28,6 +28,7 @@
     max-width: 700px;
     margin: 0 auto;
     grid-gap: 20px;
+    align-items: center;
   }
 
   .name,
@@ -150,7 +151,6 @@
     &:focus {
       background: #2894be;
       box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-      transform: scale(1.2);
       color: white;
     }
 
