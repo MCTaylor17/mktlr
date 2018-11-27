@@ -22,12 +22,14 @@
   var $button = $(".testimonials-button");
 
   $button.on("click", function () {
+    var $thisButton = $(this);
     var scrollTop = $(window).scrollTop();
     var isClosed = $testimonials.is(".closed");
     var height;
     var newScrollTop;
 
     $testimonials.stop();
+    $body.stop();
 
     if (isClosed) {
       $testimonials.css({
@@ -61,8 +63,10 @@
 
     if (isClosed) {
       $testimonials.removeClass("closed");
+      $thisButton.text("Alright, I've got it!");
     } else {
       $testimonials.addClass("closed");
+      $thisButton.text("Still Not Convinced?");
     }
   })
 
