@@ -39,7 +39,7 @@
   }
   
   blockquote {
-    margin: 20px;
+    margin-bottom: 20px;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -50,6 +50,7 @@
       font-weight: normal;
       text-align: left;
       line-height: 1.7;
+      
       strong {
         font-style: normal;
       }
@@ -70,11 +71,22 @@
       text-align: right;
       margin-top: 10px;
     }
+    @include media("<700px") {
+      p {
+        font-size: 1rem;
+      }
+      > img {
+        height: 100px;
+      }
+      footer {
+        font-size: .9rem;
+      }
+    }
   }
   
   .button-box {
     background: rgba(255, 255, 255, 0.5);
-    //background: $primary-color;
+    margin-bottom: 20px;
     border-radius: 50px;
     button {
       margin: 0;
