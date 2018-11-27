@@ -60,7 +60,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: .6;
+    opacity: .8;
     
     @include media("<1000px") {
       grid-column: 1;
