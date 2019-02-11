@@ -1,0 +1,87 @@
+$medium-brand-color: #00ab6c;
+.blogging {
+  position: relative;
+  background: white;
+  z-index: 3;
+  width: 100%;
+  padding: 10vmin 5%;
+  min-height: 110vh;
+  background: lighten($medium-brand-color, 64%);
+  > h1 img {
+    max-width: 700px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+  }
+  
+  .blog-post-grid {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  #backendification {
+    background-image: url(../../img/Backendification.jpeg);
+    z-index: 5;
+    float: left;
+  }
+  
+  #simulations {
+    background-image: url(../../img/simulations.jpeg);
+    float: right;
+    margin-top: -10%;
+  }
+  
+  #medium-stats {
+    text-align: center;
+    font-size: calc(.5vw + .5vh + 1.5rem);
+    font-weight: bold;
+    li {
+      list-style-type: none;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+  }
+  
+  section {
+    background-position: center;
+    background-size: cover;
+    height: 0;
+    width: 50vw;
+    position: relative;
+    padding-bottom: 50%;
+    
+    @include media("<1000px") {
+      width: 80%;
+      float: none !important;
+      margin: 50px !important;
+      position: relative;
+      
+    }
+    
+    h1 a {
+      display: block;
+      position: absolute;
+      left: 25%;
+      bottom: -5%;
+      color: black;
+      background: white;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+      transition: box-shadow 1s ease;
+      strong {
+        transition: color 1s ease;
+      }
+      &:hover,&:focus {
+        box-shadow: 0px 0px 50px $medium-brand-color;
+        strong {
+          color: $medium-brand-color;
+        }
+      }
+      padding: 10px;
+      font-size: calc(.5vw + .5vh + 1.5rem);
+      text-decoration: none;
+      width: 80%;
+      text-align: center;
+    }
+  }
+  
+}

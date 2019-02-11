@@ -12,6 +12,21 @@
   transition: transform 5s;
   transform-origin: right;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  #linkedin-qr {
+    display: none;
+  }
+  
+  @include media(">800px") {
+    #linkedin-qr {
+      display: block;
+      img {
+        width: 150px;
+      }
+    }
+    #linkedin-logo {
+      display: none;
+    }
+  }
   
   &:hover {
     transition: transform .5s ease;
