@@ -8,6 +8,11 @@ $center-at: "<1000px";
   header {
     position: absolute;
     font-size: calc(3vw + 2vh + .5rem);
+    @include media($center-at) {
+      font-size: calc(1vw + 1vh + 1rem);
+      color: black;
+      text-shadow: 1px 1px 4px white;
+    }
     margin-top: 30px;
     margin-left: 20px;
     color: rgb(53, 73, 94);
@@ -41,7 +46,7 @@ $center-at: "<1000px";
   background: lighten($medium-brand-color, 64%);
   
   > h1 img {
-    max-width: 700px;
+    max-width: 100%;
     margin: 0 auto;
     display: block;
     z-index: 6;
@@ -89,6 +94,10 @@ $center-at: "<1000px";
       list-style-type: none;
       line-height: 1.5;
       font-weight: bold;
+      transition: color .5s ease;
+      &:hover {
+        color: $medium-brand-color;
+      }
     }
   }
   
@@ -132,6 +141,10 @@ $center-at: "<1000px";
       text-decoration: none;
       width: 80%;
       text-align: center;
+      
+      @include media($center-at) {
+        font-size: calc(.5vw + .5vh + 1rem);
+      }
     }
   }
   

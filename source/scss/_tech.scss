@@ -44,6 +44,14 @@
     p {
       font-size: calc(.25vw + .25vh + 1rem);
       margin-bottom: 10px;
+      a, a:visited {
+        color: white;
+        transition: transform .2s ease
+      }
+      a:hover, a:focus {
+        transform: scale(1.2);
+      }
+      
       
       &:last-child {
         margin-bottom: 0;
