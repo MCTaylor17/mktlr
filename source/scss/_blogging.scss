@@ -64,10 +64,17 @@ $center-at: "<1000px";
     margin-top: -15px;
   }
   
+  
   #backendification {
     background-image: url(../../img/Backendification.jpeg);
     z-index: 5;
     float: left;
+    .publication-badge {
+      position: absolute;
+      top: 10%;
+      left: -4.5%;
+      width: 66%;
+    }
   }
   
   #simulations {
