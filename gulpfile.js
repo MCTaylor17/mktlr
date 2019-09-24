@@ -13,19 +13,6 @@ var sassSources = ["source/scss/**/*.scss"];
 var htmlSources = ["index.html"];
 var jsSources = ["js/**/*.js"];
 
-// Build files once
-gulp.task('build', ['css']);
-
-// Watch and build files on change
-gulp.task('watch', ['build'], function () {
-	bs.init({
-		server: "./"
-	});
-   gulp.watch(jsSources, ['sync']);
-	gulp.watch(htmlSources, ['sync']);
-	gulp.watch(sassSources, ['css']);
-});
-
 // Run BrowserSync after HTML changes
 gulp.task("sync", function () {
 	// Pipe nothing
@@ -48,3 +35,16 @@ gulp.task("css", function () {
 		.pipe(gulp.dest('./css'))
 		.pipe(bs.stream());
 });
+
+// Build files once
+gulp.task('build', gulp.series('css'));
+
+// Watch and build files on change
+gulp.task('watch', gulp.series('build', function () {
+	bs.init({
+		server: "./"
+	});
+   gulp.watch(jsSources, gulp.series('sync'));
+	gulp.watch(htmlSources, gulp.series('sync'));
+	gulp.watch(sassSources, gulp.series('css'));
+}));
